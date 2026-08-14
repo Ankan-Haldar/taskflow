@@ -1,0 +1,1059 @@
+/* =========================================================
+   TASKFLOW
+   Modern Indigo SaaS Theme
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --primary-light: #eef2ff;
+  --primary-soft: #e0e7ff;
+
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+
+  --column: #eef2ff;
+  --column-border: #dbe4ff;
+
+  --text: #172033;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  --border: #e2e8f0;
+
+  --high-bg: #fee2e2;
+  --high-text: #dc2626;
+
+  --medium-bg: #fef3c7;
+  --medium-text: #d97706;
+
+  --low-bg: #dcfce7;
+  --low-text: #16a34a;
+
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+
+  --success: #16a34a;
+
+  --shadow-sm:
+    0 2px 6px rgba(15, 23, 42, 0.05);
+
+  --shadow-md:
+    0 8px 24px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg:
+    0 20px 50px rgba(15, 23, 42, 0.14);
+
+  font-family:
+    "Inter",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--text);
+  background: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(79, 70, 229, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(99, 102, 241, 0.06),
+      transparent 24%
+    ),
+    var(--background);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  width: min(1500px, 100%);
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  padding: 38px 34px 60px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+
+  color: var(--primary);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: clamp(28px, 4vw, 40px);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 44px;
+
+  padding: 11px 18px;
+
+  border: 1px solid transparent;
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #6366f1
+  );
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow:
+    0 5px 14px rgba(79, 70, 229, 0.22);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.primary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.5s ease;
+}
+
+.primary:hover::before {
+  left: 140%;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 9px 22px rgba(79, 70, 229, 0.3);
+}
+
+.primary:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+  display: flex;
+  align-items: end;
+
+  gap: 18px;
+
+  margin-bottom: 26px;
+
+  padding: 18px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 1px solid rgba(226, 232, 240, 0.9);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-sm);
+
+  backdrop-filter: blur(12px);
+}
+
+.filter-group,
+.search-group,
+.modal label {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.toolbar label,
+.modal label {
+  color: #475569;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.search-group {
+  width: min(430px, 100%);
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea,
+select {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: white;
+
+  color: var(--text);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: #c7d2fe;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+input:focus {
+  transform: translateY(-1px);
+}
+
+textarea {
+  resize: vertical;
+
+  min-height: 110px;
+}
+
+/* =========================================================
+   BOARD
+========================================================= */
+
+.board {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   COLUMN
+========================================================= */
+
+.column {
+  position: relative;
+
+  min-height: 400px;
+
+  padding: 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #eef2ff 0%,
+      #f1f5ff 100%
+    );
+
+  border: 1px solid var(--column-border);
+
+  border-radius: 17px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.column:hover {
+  box-shadow:
+    0 8px 22px rgba(79, 70, 229, 0.07);
+}
+
+.column-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 3px 3px 15px;
+}
+
+.column-header h2 {
+  margin: 0 0 4px;
+
+  color: #1e293b;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.column-header span {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   TASK LIST
+========================================================= */
+
+.task-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   TASK CARD
+========================================================= */
+
+.task-card {
+  position: relative;
+
+  padding: 16px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.task-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: var(--primary);
+
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #c7d2fe;
+
+  box-shadow: var(--shadow-md);
+}
+
+.task-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================================
+   TASK TOP
+========================================================= */
+
+.task-top {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 8px;
+}
+
+.task-top h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 750;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  margin: 0 0 11px;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+.created {
+  margin: 0 0 14px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   PRIORITY
+========================================================= */
+
+.priority {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.priority:hover {
+  transform: scale(1.06);
+}
+
+.priority.high {
+  background: var(--high-bg);
+
+  color: var(--high-text);
+
+  box-shadow:
+    0 2px 7px rgba(220, 38, 38, 0.1);
+}
+
+.priority.medium {
+  background: var(--medium-bg);
+
+  color: var(--medium-text);
+
+  box-shadow:
+    0 2px 7px rgba(217, 119, 6, 0.1);
+}
+
+.priority.low {
+  background: var(--low-bg);
+
+  color: var(--low-text);
+
+  box-shadow:
+    0 2px 7px rgba(22, 163, 74, 0.1);
+}
+
+/* =========================================================
+   TASK ACTIONS
+========================================================= */
+
+.task-actions {
+  display: grid;
+
+  grid-template-columns:
+    auto auto minmax(0, 1fr);
+
+  gap: 6px;
+}
+
+.task-actions button,
+.task-actions select {
+  min-width: 0;
+
+  min-height: 33px;
+
+  padding: 6px 9px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 650;
+}
+
+.task-actions button {
+  background: #f1f5f9;
+
+  color: #334155;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.task-actions button:hover {
+  transform: translateY(-1px);
+
+  background: var(--primary-light);
+
+  color: var(--primary-dark);
+}
+
+.task-actions .danger {
+  color: var(--danger);
+}
+
+.task-actions .danger:hover {
+  background: var(--danger-soft);
+
+  color: #b91c1c;
+}
+
+/* =========================================================
+   EMPTY COLUMN
+========================================================= */
+
+.empty-column {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 125px;
+
+  padding: 20px;
+
+  color: var(--text-muted);
+
+  background: rgba(255, 255, 255, 0.35);
+
+  border: 1px dashed #c7d2fe;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.empty-column:hover {
+  background: rgba(255, 255, 255, 0.65);
+
+  border-color: #a5b4fc;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  padding: 11px 13px;
+
+  background: var(--danger-soft);
+
+  border: 1px solid #fecaca;
+
+  border-radius: 9px;
+
+  color: #b91c1c;
+
+  font-size: 13px;
+}
+
+.global-error {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  animation: errorIn 0.25s ease;
+}
+
+@keyframes errorIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.global-error button {
+  padding: 4px 7px;
+
+  background: transparent;
+
+  color: inherit;
+
+  text-decoration: underline;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.52);
+
+  backdrop-filter: blur(6px);
+
+  animation: backdropIn 0.2s ease;
+}
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  width: min(520px, 100%);
+
+  max-height: calc(100vh - 40px);
+
+  overflow-y: auto;
+
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 17px;
+
+  box-shadow: var(--shadow-lg);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+
+  animation: modalIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(14px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+}
+
+.icon-button {
+  display: grid;
+
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  background: #f1f5f9;
+
+  border-radius: 50%;
+
+  color: #475569;
+
+  font-size: 20px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.icon-button:hover {
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  transform: rotate(90deg);
+}
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 9px;
+
+  padding-top: 4px;
+}
+
+.modal-actions button:not(.primary) {
+  min-height: 42px;
+
+  padding: 10px 15px;
+
+  background: #f1f5f9;
+
+  border-radius: 9px;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modal-actions button:not(.primary):hover {
+  background: #e2e8f0;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CENTER / LOADING
+========================================================= */
+
+.center-screen {
+  min-height: 100vh;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 24px;
+
+  color: var(--text-secondary);
+
+  text-align: center;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5b4fc;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 24px 16px 40px;
+  }
+
+  .topbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .topbar .primary {
+    width: 100%;
+  }
+
+  .toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .search-group {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .task-actions {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .task-actions select {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 430px) {
+  .app {
+    padding: 18px 12px 30px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .column {
+    padding: 12px;
+  }
+
+  .task-card {
+    padding: 14px;
+  }
+
+  .modal {
+    padding: 19px;
+
+    border-radius: 14px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
