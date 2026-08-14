@@ -207,8 +207,10 @@ These queries are executed against the database in `backend/app/queries.py`; res
 
 ## Time spent
 
-Approximately: [fill this in before submission]
+Approximately a few hours, including implementation, testing, debugging, UI refinement, and documentation.
 
 ## What I learned
 
-[Add 2–4 sentences about something you looked up or found interesting while building the project.]
+While building TaskFlow, I learned more about structuring a small full-stack application with a clear separation between the frontend, API, service, and database layers. I also learned how to write database-level SQL queries for aggregation, filtering, and ordering instead of doing those operations only in application code.
+
+I also gained practical experience with backend validation, automated API testing, and making sure data persists correctly across page reloads.
